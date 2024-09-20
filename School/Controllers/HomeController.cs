@@ -35,20 +35,27 @@ namespace School.Controllers
         
         public IActionResult Update(int id)
         {
-            return View(_studentDBContext.StudentsDate.Where(a => a.StudentId == id).FirstOrDefault());
+            var data = _studentDBContext.StudentsDate.FirstOrDefault(a => a.StudentId == id);
+            return View(data);
         }
 
         [HttpPost]
-        [ActionName("Update")]
         public IActionResult Update_Post(Student student)
         {
             _studentDBContext.StudentsDate.Update(student);
             _studentDBContext.SaveChanges();
             return RedirectToAction("StudentDetails");
         }
+        public IActionResult Delete(int id)
+        {
+            var data = _studentDBContext.StudentsDate.FirstOrDefault(a => a.StudentId == id);
+            _studentDBContext.StudentsDate.Remove(data);
+            _studentDBContext.SaveChanges();
+            return RedirectToAction("StudentDetails");
+        }
 
 
-            public IActionResult Create()
+        public IActionResult Create()
         {
 
             return View();

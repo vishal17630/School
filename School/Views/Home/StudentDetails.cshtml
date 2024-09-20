@@ -26,10 +26,11 @@
                     <td>@student.Standard</td>
                     <td>@student.Medium</td>
                     <td>@student.Mobile</td>
-                    <td><a asp-action="Update" asp-route-id= StudentId">Update</a></td>
                     <td>
-                        <asp-action ="Delete" method="post" asp-route-id= "StudentId">
-                            <button>Delete</button>
+                        <a href="@Url.Action("Update","Home", new {Id = student.StudentId})"> Update </a></td>
+                    <td>
+                        <a href="@Url.Action("Delete","Home", new {Id = student.StudentId})"> Delete </a>
+                    </td>
                 </tr>
             }
         </tbody>
