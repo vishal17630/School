@@ -1,0 +1,20 @@
+﻿PLACE ALL DDL & DML QUERY HERE
+
+IE.CREATE, ALTER, DROP, INSERT & UPDATE
+
+CREATE TABLE Employee(
+ID INT PRIMARY KEY identity(1,1)
+,Name VARCHAR(50),
+Email VARCHAR(50),
+Contact VARCHAR(10),
+Address VARCHAR(50),
+IsActive bit DEFAULT 1, 
+CreateDate datetime, 
+CreatedBy VARCHAR(50),
+ModifiedDate datetime,
+ModifiedBy VARCHAR(50));
+
+
+select *from Employee
+
+INSERT INTO Employee( Name, Email, Contact, Address) VALUES ('Vishal','Vishal@email.com','9876543212','Limbayat-Surat');
